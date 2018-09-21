@@ -2,8 +2,16 @@
 pastel green/grey #bececd
 pastel green #c3d8be
 green #85b5a3
-teal green #578d8e */
+jungle dark green #203535*/
 
 header, footer {
-  background: #578d8e
+  background: #203535
+}
+
+.work{
+  background:#f7fff6
+}
+
+.education{
+  background: #bececd
 }

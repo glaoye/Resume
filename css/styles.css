@@ -2,10 +2,18 @@
 pastel green/grey #bececd
 pastel green #c3d8be
 green #85b5a3
-jungle dark green #203535*/
+jungle dark green #203535
+electric blue #78E3FD*/
 
 header, footer {
-  background: #203535
+  background: #203535;
+  color: #bececd
+}
+a {
+  color: #78E3FD
+}
+a:hover {
+  text-decoration: none
 }
 
 .work{

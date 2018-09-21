@@ -1,3 +1,9 @@
-body {
-  background: red;
+/* mint cream #f7fff6
+pastel green/grey #bececd
+pastel green #c3d8be
+green #85b5a3
+teal green #578d8e */
+
+header, footer {
+  background: #578d8e
 }

@@ -9,6 +9,11 @@ header, footer {
   background: #0C352A;
   color: #bececd
 }
+footer {
+  text-align: center;
+}
+
+
 
 .heading, .subheading, .subdescription{
   text-align: center;
@@ -22,6 +27,7 @@ header, footer {
 
 body {
   font-family: 'Abel', sans-serif;
+  margin: 0;
 }
 
 .work{
@@ -35,6 +41,9 @@ body {
 h1{
   font-size: 80px;
 }
+h2{
+  margin-top:0;
+}
 h1, h2{
   font-family: 'Merriweather', serif;
   font-style: italic;
@@ -43,6 +52,21 @@ h1, h2{
 a {
   color: #78E3FD
 }
+
 a:hover {
   text-decoration: none
+}
+
+
+
+.content{
+  max-width:950px;
+  margin:0 auto;
+  padding:50px;
+}
+
+.contactinfo a {
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
 }

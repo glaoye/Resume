@@ -24,6 +24,14 @@ body {
   font-family: 'Abel', sans-serif;
 }
 
+.work{
+  background:#f7fff6
+}
+
+.education{
+  background: #85b5a3
+}
+
 h1{
   font-size: 80px;
 }
@@ -37,12 +45,4 @@ a {
 }
 a:hover {
   text-decoration: none
-}
-
-.work{
-  background:#f7fff6
-}
-
-.education{
-  background: #85b5a3
 }

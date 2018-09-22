@@ -5,6 +5,18 @@ green #85b5a3
 pthalo green #0C352A
 electric blue #78E3FD*/
 
+
+.profile-img{
+  object-fit:  cover;
+  width: 300px;
+  /* height: 300px; */
+  border-radius: 50%
+
+
+
+
+}
+
 header, footer {
   background: #0C352A;
   color: #bececd

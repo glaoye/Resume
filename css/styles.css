@@ -9,9 +9,29 @@ header, footer {
   background: #0C352A;
   color: #bececd
 }
-header h1, header h2 {
+
+.heading, .subheading, .subdescription{
+  text-align: center;
   color: #f7fff6
 }
+.subdescription{
+  font-style: italic;
+  font-family: Merriweather, cursive;
+  font-weight: 100
+}
+
+body {
+  font-family: 'Abel', sans-serif;
+}
+
+h1{
+  font-size: 80px;
+}
+h1, h2{
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+}
+
 a {
   color: #78E3FD
 }

@@ -5,44 +5,81 @@ green #85b5a3
 pthalo green #0C352A
 electric blue #78E3FD*/
 
-
-.profile-img{
-  object-fit:  cover;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%
-
-
+/* turquoise #3AF2C7
+pastel green/grey #bececd
+pastel green #c3d8be
+green #85b5a3
+pthalo green #0C352A
+electric blue #78E3FD*/
 
 
-}
+/*------- heading --------*/
 
 header, footer {
-  background: #0C352A;
-  color: #bececd
+  background: #3AF2C7;
+  color: white
 }
 footer {
   text-align: center;
 }
 
 
+.headingcontainer{
+  margin-bottom:20px;
+}
 
+
+.profile-img{
+  object-fit: cover;
+  width: 30%;
+  height: 280px;
+  float: left;
+  margin-top:20px;
+  border-radius:8px
+}
+
+.heading{
+    font-size: 100px;
+    color: white
+}
+.subheading{
+  margin-top:0;
+  margin-bottom:50px;
+  color: black;
+  font-size:30px;
+}
 .heading, .subheading{
   text-align: center;
-  color: #f7fff6;
   margin: 0;
+  font-family: 'Questrial', serif;
 }
 
 
 .subdescription{
-  text-align: center;
-  color: #f7fff6
-  font-style: italic;
-  font-family: Merriweather, cursive;
-  font-weight: 100
+  float: right;
+  width: 60%;
+  text-align: right;
+  color: #41463D;
+  font-family: 'Abel', cursive;
+  font-weight: 100;
+  font-size: 18pt
+}
+.headercontent{
+  max-width:950px;
+  margin:0 auto;
+  padding-bottom:320px;
 }
 
+.content{
+  max-width:950px;
+  margin:0 auto;
+  padding:50px;
+}
+
+
+
 body {
+  clear: both;
   font-family: 'Abel', sans-serif;
   margin: 0;
 }
@@ -52,19 +89,11 @@ body {
 }
 
 .education{
+  clear: both;
   background: #85b5a3
 }
 
-h1{
-  font-size: 80px;
-}
-h2{
-  margin-top:0;
-}
-h1, h2{
-  font-family: 'Merriweather', serif;
-  font-style: italic;
-}
+
 
 a {
   color: #78E3FD
@@ -76,11 +105,7 @@ a:hover {
 
 
 
-.content{
-  max-width:950px;
-  margin:0 auto;
-  padding:50px;
-}
+
 
 .contactinfo a {
   padding: 10px;

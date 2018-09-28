@@ -13,16 +13,20 @@ pthalo green #0C352A
 electric blue #78E3FD*/
 
 
-/*------- heading --------*/
+/*------- global heading --------*/
 
 header, footer {
-  background: #3AF2C7;
-  color: white
+  background: #011638;
+  color: #F2F2F2
 }
 footer {
   text-align: center;
 }
 
+h2{
+  font-size: 45pt;
+}
+/*local headin*/
 
 .headingcontainer{
   margin-bottom:20px;
@@ -40,17 +44,18 @@ footer {
 
 .heading{
     font-size: 100px;
-    color: white
+    color: #E2E2E2
 }
 .subheading{
   margin-top:0;
   margin-bottom:50px;
-  color: black;
-  font-size:30px;
+  color: #E2E2E2;
+  font-size:25px;
 }
 .heading, .subheading{
   text-align: center;
   margin: 0;
+  font-weight: 500;
   font-family: 'Questrial', serif;
 }
 
@@ -59,9 +64,9 @@ footer {
   float: right;
   width: 60%;
   text-align: right;
-  color: #41463D;
+  color: #C9B98F;
   font-family: 'Abel', cursive;
-  font-weight: 100;
+  font-weight: 10;
   font-size: 18pt
 }
 .headercontent{
@@ -73,25 +78,55 @@ footer {
 .content{
   max-width:950px;
   margin:0 auto;
-  padding:50px;
+  padding:30px;
 }
 
-
-
+/*--------body---------*/
 body {
   clear: both;
   font-family: 'Abel', sans-serif;
   margin: 0;
 }
 
-.work{
-  background:#f7fff6
+h3{
+  font-size:25pt;
+  padding: 0px;
+  margin-bottom:10px;
+}
+.education p{
+  font-size: 15pt;
+}
+
+.job{
+  display:inline-block;
+  font-size: 20pt;
+  padding-right: 50px
 }
 
 .education{
   clear: both;
-  background: #85b5a3
+  background: #EDF9FF;
 }
+.bits{
+  padding:20px 30px;
+}
+
+
+
+.date{
+  display: inline-block;
+  padding:0px;
+  margin-bottom:50px;
+  font-style: italic;
+  font-size: 15pt;
+  }
+
+.work{
+  background:#f7fff6;
+}
+
+
+
 
 
 

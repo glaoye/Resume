@@ -33,7 +33,7 @@ header,section{
   margin-bottom:50px
 }
 
-.bits1{
+.bits{
   /* position: relative; */
   /* margin-top: 20px; */
   margin: 2em auto;
@@ -59,7 +59,7 @@ header,section{
 .show:target{
   display:none
 }
-.show:target ~ .bits1{
+.show:target ~ .bits{
 
   max-height:300px
 }
@@ -80,8 +80,6 @@ header,section{
   clear:both;
   font-family:'Abel'
 }
-
-
 
 
 img{

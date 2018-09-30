@@ -8,66 +8,132 @@ h1{
 h2{
   font-family:'Abel';
   font-size: 50pt;
+  text-align: center;
 }
 
 h3{
+  font-family:'Abel';
   font-size: 15pt;
-  font-style: italic;
+  text-align: center;
 }
 
-
+/*
 body{
     background-image: linear-gradient(#6B5722, #FFFCED);
-}
+} */
 
 
-header,section{
+/* header,section, body{
   max-width:950px;
   margin:0 auto;
   padding:30px;
   clear:both;
+} */
+
+header{
+      background-image: linear-gradient(#007565, #DCEAE5);
+      padding-bottom:60px;
+}
+
+.reports{
+  background:#DCEAE5;
+}
+
+.other{
+  background:#DCEAE5;
+}
+.comingup{
+  background-image: linear-gradient(#DCEAE5,#007565);
+}
+/* .reports{#DCEAE5
+      background-image: linear-gradient(#B29C72,#E8E2CE);
+}
+.other{
+    padding-top:60px;
+      background-image: linear-gradient(#E8E2CE, #B3C6C6);
+} */
+
+
+/* #B3C6C6 */
+
+
+
+.content{
+  max-width:950px;
+  margin:0 auto;
+  padding:30px;
 }
 
 .description{
   margin-bottom:50px
 }
 
+.bits{
+  /* position: relative; */
+  /* margin-top: 20px; */
+  margin: 2em 0;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease;
 
-.containerleft .bits{
-  width:50%;
-  float:left;
-  padding:0;
-  margin:0;
-  clear:both;
-  font-family:'Abel'
 }
 
-.containerright .bits{
-  width:50%;
-  float:left;
-  padding:0;
+
+.show, .hide {
+  position:absolute;
+  right: 47.7%;
+  text-align: center;
+  color:white;
+  font-family: 'Abel';
+  text-decoration: none;
+}
+
+.hide{
+  display:none;
+}
+
+.show:target ~ .hide {display: block;}
+.show:target{
+  display:none
+}
+.show:target ~ .bits{
+
+  max-height:300px
+}
+
+/* .container{
+  max-width:950px;
   margin:0;
+  padding:0;
+  clear:both;
+} */
+
+
+.container p{
+  width:60%;
+  float:left;
+  padding-top:50px;
+  margin-right:0;
   clear:both;
   font-family:'Abel';
-  clear:both
+  text-align: right;
 }
 
 
-.containerleft img{
+img{
   width:20%;
-  float:left;
-  margin:40px 40px;
-  margin-right:40px;
+  float:right;
+  height: 200px;
+  object-fit:fill;
+  /* margin-bottom:40px;
+  margin-left:40px;*/
+  margin-right:100px;
+  margin-top: 10px
 }
 
-.containerright img{
-  width:20%;
-  float:left;
-  margin:40px 40px;
-  margin-right:40px;
-}
+
 
 img:hover{
-  width: 20.5%;
+  width: 21%;
   box-shadow: 0px 0px 15px 0px lightblue
 }

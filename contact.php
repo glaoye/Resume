@@ -1,3 +1,13 @@
+<?php
+$errors = [];
+$missing = [];
+if (isset($_POST['send'])){
+  $expected = ['firstname','lastname','email','company','category','message'];
+  $required = ['firstname','lastname','email','category','message'];
+  require 'process-mail.php';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -21,24 +31,57 @@
     <section class='contactform'>
 
         <div class="container">
+
           <form method='post' action="<?= $_SERVER['PHP_SELF'];?>">
     <!-- action will not be executed here, but ina conditional statement on top of html
     the current action sends page to itself-->
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+              <?php if($missing):?>
+                <p class='warningheading'>Please fill in the required field(s).</p>
+              <?php endif; ?>
+              <?php if($errors):?>
+                <p class='warningheading'>Please fix the following error(s)</p>
+              <?php endif; ?>
 
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
-            <label for="company">Email</label>
-            <input type="text" id="email" name="email" placeholder="Your email...">
+            <label for="fname">First Name
+              <?php if($missing && in_array('firstname', $missing)):?>
+                <p class='warning'>Please enter your first name.</p>
+              <?php endif; ?>
+            </label>
+            <input type="text" id="fname" name="firstname" placeholder="Your first name.."
+            <?php if($missing||$errors){
+              echo "value={$firstname}";}?>>
+
+            <label for="lname">Last Name
+              <?php if($missing && in_array('lastname', $missing)):?>
+                <p class='warning'>Please enter your last name.</p>
+              <?php endif; ?>
+            </label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.."
+            <?php if($missing||$errors){
+              echo "value={$lastname}";}?>>
+
+            <label for="company">Email
+              <?php if($missing && in_array('email', $missing)):?>
+                <p class='warning'>Please enter your email address.</p>
+              <?php endif; ?>
+            </label>
+            <input type="text" id="email" name="email" placeholder="Your email..."
+            <?php if($missing||$errors){
+              echo "value={$email}";}?>>
 
             <label for="company">Company</label>
-            <input type="text" id="company" name="company" placeholder="Your company... (optional)">
+            <input type="text" id="company" name="company" placeholder="Your company... (optional)"
+            <?php if($missing||$errors){
+              echo "value={$company}";}?>>
 
-            <label for="country">Message Type</label>
-              <select id="mtype" name="messagetype" placeholder='Select from options...'>
-                <option value='noselection'>Select from...</option>
+            <label for="country">Category
+              <?php if($missing && in_array('category', $missing)):?>
+                <p class='warning'>Please select a message category.</p>
+              <?php endif; ?>
+            </label>
+              <select id="mtype" name="category" placeholder='Select from options...'>
+                <option value=''>Select from...</option>
                 <option value="query">Query</option>
                 <option value="comment">Comment</option>
                 <option value="request">Request</option>
@@ -46,10 +89,17 @@
                 <option value="other">Other</option>
               </select>
 
-            <label for="subject">Message Details<label>
-            <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+            <label for="subject">Message Details
+              <?php if($missing && in_array('message', $missing)):?>
+                <p class='warning'>Please enter a message.</p>
+              <?php endif; ?>
+            <label>
+            <textarea id="message" name="message" placeholder="Write something.." style="height:200px">
+              <?php if($missing||$errors){
+                echo "{$message}";}?>
+              </textarea>
 
-            <input type="submit" value="Submit">
+            <input type="submit" name='send' value="Submit">
 
           </form>
         </div>

@@ -44,7 +44,7 @@ input[placeholder], select[placeholder], textarea[placeholder]{
     font-size: 12pt;
 }
 
-select[value=noselection]{
+.no{
   color: grey;
 } /*wronggggg ughhhhh*/
 /* Style the submit button with a specific background color etc */
@@ -63,5 +63,15 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: blue;
 }
+.warning, .warningheading{
+  color: red;
+  font-size:11pt;
+  font-family: 'Abel';
+  font-weight: 700;
+}
 
+
+.warningheading{
+  font-size: 15pt;
+}
 /* Add a background color and some padding around the form */

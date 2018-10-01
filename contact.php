@@ -41,6 +41,9 @@ if (isset($_POST['send'])){
               <?php if($errors):?>
                 <p class='warningheading'>Please fix the following error(s)</p>
               <?php endif; ?>
+              <?php if($suspect):?>
+                <p class='warningheading'>Sorry, your message was unable to be sent.</p>
+              <?php endif; ?>
 
 
             <label for="fname">First Name
@@ -61,21 +64,28 @@ if (isset($_POST['send'])){
             <?php if($missing||$errors){
               echo "value={$lastname}";}?>>
 
-            <label for="company">Email
+            <label for="email">Email
               <?php if($missing && in_array('email', $missing)):?>
                 <p class='warning'>Please enter your email address.</p>
               <?php endif; ?>
+              <?php if($errors && in_array('email', $errors)):?>
+                <p class='warning'>Please enter a valid email address.</p>
+              <?php endif;?>
+              
             </label>
             <input type="text" id="email" name="email" placeholder="Your email..."
             <?php if($missing||$errors){
               echo "value={$email}";}?>>
+
+
+
 
             <label for="company">Company</label>
             <input type="text" id="company" name="company" placeholder="Your company... (optional)"
             <?php if($missing||$errors){
               echo "value={$company}";}?>>
 
-            <label for="country">Category
+            <label for="category">Category
               <?php if($missing && in_array('category', $missing)):?>
                 <p class='warning'>Please select a message category.</p>
               <?php endif; ?>

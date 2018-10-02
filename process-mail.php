@@ -2,6 +2,8 @@
 /*<?php if(!in_array('email', $missing)&&!preg_match($emailpattern, $email)):?>
   <p class='warning'>Please enter a valid email address.</p>
 <?php endif; ?>*/
+
+$mailSent=false;
 $suspect= false;
 //pearl compatible regular Expression
 $pattern = '/Content-type:|Bcc:|Cc:/i'; // 'i' makes it case insensitive
@@ -18,12 +20,12 @@ function isSuspect($value, $pattern, &$suspect){
   }
 };
 
-$isValid=true;
-function isEmail($value, $pattern, &$isValid){
-  if(!preg_match($pattern, $value)){
-    $isValid=false;
-  }
-};
+// $isValid=true;
+// function isEmail($value, $pattern, &$isValid){
+//   if(!preg_match($pattern, $value)){
+//     $isValid=false;
+//   }
+// };
 
 
 
@@ -53,7 +55,7 @@ if(!$suspect){
   };
   //Validate users Email
 
-  if(!$missing && !empty($email)) :
+  if(!empty($email)) :
     $validemail = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
     if($validemail){
       $headers[] = "Reply-to: $validemail";
@@ -62,7 +64,25 @@ if(!$suspect){
   endif;
   //if no erros create headers and message body
   if (!$errors && !$missing) :
-    $headers= implode("\r\n", $headers);
+      $headers= implode("\r\n", $headers);
+      //initialize message
+      $messagebody = '';
+      foreach($expected as $field):
+        if (isset($$field) && !empty($$field)){
+          $val = $$field;
+        }else{
+          $val = 'Not selected';
+        };
+        // If array, expand to comma separated string
+        if (is_array($val)){
+          $val = implode(', ', $val);
+        }
+        //replace underscore in field with spaces
+        $field =str_replace('_',' ', $field);
+        $messagebody .= ucfirst($field) . ": $val\r\n\r\n";
+      endforeach;
+      $messagebody = wordwrap($messagebody, 70);
+      $mailSent=true;
   endif;
 };
 //if suspect is true, neither missing or errors will have values, script won't run.

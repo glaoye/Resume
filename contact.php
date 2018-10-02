@@ -114,10 +114,9 @@ if (isset($_POST['send'])){
                 <p class='warning'>Please enter a message.</p>
               <?php endif; ?>
             <label>
-            <textarea id="message" name="message" placeholder="Write something.." style="height:200px">
-              <?php if($missing||$errors){
-                echo "{$message}";}?>
-              </textarea>
+            <textarea id="message" name="message" placeholder="Write something.." style="height:200px"><?php
+            if($missing||$errors){
+                echo "{$message}";}?></textarea>
 
             <input type="submit" name='send' value="Submit">
 
@@ -125,5 +124,14 @@ if (isset($_POST['send'])){
         </div>
   </section>
 </div>
+<pre>
+<?php
+if ($_POST && mailSent){
+  echo "Message: \n\n";
+  echo htmlentities($messagebody);
+  echo "Headers \n\n";
+  echo htmlentities($headers);
+}?>
+</pre>
   </body>
 </html>

@@ -4,20 +4,19 @@
 .banner{
   background: #20211F;
   color:  #C9B98F;
-  height: 100px;
+  height: 60px;
+  padding:0;
+  margin:0;
 }
-header{
-  padding-top:50px
+.banner .content{
+  padding-top:10px;
 }
+
 button{
   height: 40px;
-  margin-left: 20px;
-  margin-right:20px;
-  width: 20%;
-  /* border-radius: 10px; */
-  opacity: 2;
+  width: 24%;
   transition: 0.3s;
-  background:  #EDF9FF;
+  background:  rgba(76, 175, 80, 0);
   border: none;
 }
 
@@ -29,15 +28,14 @@ button:hover{
 button a{
   color:  #968142;
   text-decoration: none;
-  font-size: 15pt;
+  font-size: 20pt;
   font-family: 'Questrial';
 }
 
 
-
 /*----- body features -----*/
 
-body{
+body, hr{
   margin:0;
 }
 
@@ -46,12 +44,14 @@ h1{
   font-size: 60pt;
   font-size: 100px;
   color: #E2E2E2;
+  transition: 0.5s
 }
 
 h2{
   font-family:'Abel';
   font-size: 50pt;
   text-align: center;
+  transition: 0.5s
 }
 
 h3{
@@ -65,7 +65,19 @@ header{
       background-image: linear-gradient(#007565, #DCEAE5);
       padding-bottom:60px;
 }
-
+.subdescription{
+  font-family:'Abel';
+  font-size:15pt;
+  text-align: center;
+  color:  #968142;
+}
+.description{
+  font-family:'Abel';
+  font-size:13pt;
+  font-style: italic;
+  text-align: center;
+  font-weight: 200;
+}
 .reports{
   background:#DCEAE5;
 }
@@ -95,7 +107,7 @@ header{
   margin: 2em 0;
   max-height: 0px;
   overflow: hidden;
-  transition: max-height .5s ease;
+  transition: max-height 2s ease;
 
 }
 /*----- show/hide -----*/
@@ -141,6 +153,10 @@ header{
   font-family:'Abel';
   text-align: right;
 }
+.comingup .container p{
+  text-align: center;
+  width:100%;
+}
 
 
 .imgcontainer {
@@ -150,18 +166,27 @@ header{
     height: 150px;
     margin-right:150px;
     margin-top: 60px;
-    object-fit:fill;
+    object-fit:cover;
     transition: 0.3s;
+    overflow:hidden;
 }
 .imgcontainer img {
     width: 100%;
     height: 100%;
-    object-fit:fill;
+    transition:0.3s
 }
 
+/*----hover effects---*/
+.content:hover>h1{
+  text-shadow: 0px 0px 10px white;
+}
 
+.content:hover>h2{
+  font-size:52pt;
+  text-shadow: 0px 0px 10px grey
+}
 /*--- button effects -----*/
-.imgbutton{
+.imgtext{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -177,20 +202,28 @@ header{
   transition: 0.3s;
 }
 
-.circle.imgcontainer .imgbutton{
+.circle.imgcontainer .imgtext{
   font-weight: bold;
   color: #C6BB61;
 }
 .circle.imgcontainer, .circleimg{
   border-radius: 50%}
 
-
-.imgcontainer:hover{
-  width: 15.5%;
-  height:160px;
-  box-shadow: 0px 0px 15px 0px #15A5F2;
+img:hover{
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
-.imgbutton:hover{
+.imgcontainer:hover{
+  width: 15%;
+  height:150px;
+  box-shadow: 0px 0px 15px 0px #15A5F2;
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.imgtext:hover{
   color:#C1A655;
-  font-size:19pt;
+  font-size:18pt;
+
 }

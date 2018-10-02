@@ -22,10 +22,40 @@ background blue #EDF9FF
 
 
 /*------- global heading --------*/
+.banner{
+  background: #20211F;
+  color:  #C9B98F;
+  height: 100px;
+}
+header{
+  padding-top:50px
+}
+button{
+  height: 40px;
+  margin-left: 20px;
+  margin-right:20px;
+  width: 20%;
+  /* border-radius: 10px; */
+  opacity: 2;
+  transition: 0.3s;
+  background:  #EDF9FF;
+  border: none;
+}
 
+button:hover{
+  background: #FFFABA;
+  box-shadow: 0px 0px 15px 0px lightblue;
+  /* opacity: 1; */
+}
+button a{
+  color:  #968142;
+  text-decoration: none;
+  font-size: 15pt;
+  font-family: 'Questrial';
+}
 header, footer {
   background: #011638;
-  color: #F2F2F2
+  color: #F2F2F2;
 }
 footer {
   text-align: center;

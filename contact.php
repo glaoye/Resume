@@ -2,8 +2,8 @@
 $errors = [];
 $missing = [];
 if (isset($_POST['send'])){
-  $expected = ['firstname','lastname','email','company','category','message'];
-  $required = ['firstname','lastname','email','category','message'];
+  $expected = ['firstname','lastname','email','company','category','message_details'];
+  $required = ['firstname','lastname','email','category','message_details'];
   $to = 'Gloria Laoye <gloria.laoye@durham.ac.uk';
   $subject = 'Feedback from my website';
   $headers = [];
@@ -11,6 +11,10 @@ if (isset($_POST['send'])){
   $headers[] = 'Content-type: text/plain;charset=utf-8';
   $authorized = null;
   require 'process-mail.php';
+  if ($mailSent){
+    header('Location: thanks.php');
+    exit;
+  }
 }
 ?>
 
@@ -47,7 +51,7 @@ if (isset($_POST['send'])){
               <?php if($errors):?>
                 <p class='warningheading'>Please fix the following error(s)</p>
               <?php endif; ?>
-              <?php if($suspect):?>
+              <?php if($_POST && ($suspect||isset($errors['mailfail']))):?>
                 <p class='warningheading'>Sorry, your message was unable to be sent.</p>
               <?php endif; ?>
 
@@ -110,13 +114,13 @@ if (isset($_POST['send'])){
               </select>
 
             <label for="subject">Message Details
-              <?php if($missing && in_array('message', $missing)):?>
+              <?php if($missing && in_array('message_details', $missing)):?>
                 <p class='warning'>Please enter a message.</p>
               <?php endif; ?>
             <label>
-            <textarea id="message" name="message" placeholder="Write something.." style="height:200px"><?php
+            <textarea id="message_details" name="message_details" placeholder="Write something.." style="height:200px"><?php
             if($missing||$errors){
-                echo "{$message}";}?></textarea>
+                echo "{$message_details}";}?></textarea>
 
             <input type="submit" name='send' value="Submit">
 
@@ -126,9 +130,9 @@ if (isset($_POST['send'])){
 </div>
 <pre>
 <?php
-if ($_POST && mailSent){
+if ($_POST && $mailSent){
   echo "Message: \n\n";
-  echo htmlentities($messagebody);
+  echo htmlentities($message);
   echo "Headers \n\n";
   echo htmlentities($headers);
 }?>

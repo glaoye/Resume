@@ -66,7 +66,7 @@ if(!$suspect){
   if (!$errors && !$missing) :
       $headers= implode("\r\n", $headers);
       //initialize message
-      $messagebody = '';
+      $message = '';
       foreach($expected as $field):
         if (isset($$field) && !empty($$field)){
           $val = $$field;
@@ -79,10 +79,13 @@ if(!$suspect){
         }
         //replace underscore in field with spaces
         $field =str_replace('_',' ', $field);
-        $messagebody .= ucfirst($field) . ": $val\r\n\r\n";
+        $message .= ucfirst($field) . ": $val\r\n\r\n";
       endforeach;
-      $messagebody = wordwrap($messagebody, 70);
-      $mailSent=true;
+      $message = wordwrap($message, 70);
+      $mailSent=mail($to, $subject, $message, $headers, $authorized);
+      if (!$mailSent){
+        $errors['mailfail']=true;
+      }
   endif;
 };
 //if suspect is true, neither missing or errors will have values, script won't run.

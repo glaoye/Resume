@@ -1,30 +1,22 @@
 
-.content{
-  max-width:950px;
-  margin:0 auto;
-  padding:30px;
-}
+
+/*---- banner settings -----*/
 .banner{
   background: #20211F;
   color:  #C9B98F;
-  height: 100px;
-}
-body{
+  height: 60px;
+  padding:0;
   margin:0;
-  background-image: linear-gradient(#01193F, #EDF9FF);
 }
-/* header{
-  padding-top:50px
-} */
+.banner .content{
+  padding-top:10px;
+}
+
 button{
   height: 40px;
-  margin-left: 20px;
-  margin-right:20px;
-  width: 20%;
-  /* border-radius: 10px; */
-  opacity: 2;
+  width: 24%;
   transition: 0.3s;
-  background:  #EDF9FF;
+  background:  rgba(76, 175, 80, 0);
   border: none;
 }
 
@@ -36,28 +28,48 @@ button:hover{
 button a{
   color:  #968142;
   text-decoration: none;
-  font-size: 15pt;
+  font-size: 20pt;
   font-family: 'Questrial';
 }
+
+
+/*----container settings ----*/
 header{
   padding-top:50px}
 
+.content{
+  max-width:950px;
+  margin:0 auto;
+  padding:30px;
+}
 
+
+body{
+    margin:0;
+    padding:0;
+    background-image: linear-gradient(#01193F, #EDF9FF);
+  }
+
+
+ /*---- text settings ----*/
 h1{
   font-family: 'Questrial';
   font-size: 60pt;
   font-size: 100px;
   color: #E2E2E2;
+  transition: 0.3s
 }
 
 h2{
   font-family:'Abel';
   font-size: 50pt;
+  transition:0.3s
 }
 
 h3{
   font-size: 15pt;
   font-style: italic;
+  transition:0.3s
 }
 
 .light{
@@ -66,10 +78,32 @@ h3{
 .dark{
     color: #6B5722;
 }
-/* body{
-    background-image: linear-gradient(#01193F, #EDF9FF);
-} */
+/*----- hover settings -----*/
+h1:hover{
+  text-shadow: 0px 0px 20px white;
+}
 
+h2:hover{
+  font-size:51pt;
+  text-shadow: 0px 0px 10px #9FA9AD;
+}
+/* h2:hover+h3{
+  font-size:15pt;
+  text-shadow: 0px 0px ;
+} */
+.two h2:hover, .three h2:hover, .four h2:hover, .five h2:hover{
+  font-size:51pt;
+  text-shadow: 0px 0px 8px white;
+}
+
+h3:hover{
+  font-size:15.5pt;
+  color:#9E8540;
+}
+
+
+
+/*----- paragraph aligning settings ----*/
 
 .alignright{
   text-align:right;
@@ -102,6 +136,7 @@ h3{
   float: left;
   height: 190px;
   border-radius:50%;
+  transition: 0.3s;
 }
 .alignleft img{
   object-fit:cover;
@@ -109,4 +144,10 @@ h3{
   float: right;
   height: 190px;
   border-radius:50%;
+  transition: 0.3s;
+}
+
+img:hover{
+  box-shadow: 0px 0px 15px 0px lightblue;
+  width:20.3%;
 }

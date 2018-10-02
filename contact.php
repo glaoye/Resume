@@ -4,6 +4,12 @@ $missing = [];
 if (isset($_POST['send'])){
   $expected = ['firstname','lastname','email','company','category','message'];
   $required = ['firstname','lastname','email','category','message'];
+  $to = 'Gloria Laoye <gloria.laoye@durham.ac.uk';
+  $subject = 'Feedback from my website';
+  $headers = [];
+  $headers[] = 'From: webmaster@example.com';
+  $headers[] = 'Content-type: text/plain;charset=utf-8';
+  $authorized = null;
   require 'process-mail.php';
 }
 ?>
@@ -67,11 +73,15 @@ if (isset($_POST['send'])){
             <label for="email">Email
               <?php if($missing && in_array('email', $missing)):?>
                 <p class='warning'>Please enter your email address.</p>
+              <?php elseif (isset($errors['email'])):?>
+                <p class='warning'>Invalid email address</p>
               <?php endif; ?>
-              <?php if($errors && in_array('email', $errors)):?>
+
+              <!-- ?php if($errors && in_array('email', $errors)):?>
                 <p class='warning'>Please enter a valid email address.</p>
-              <?php endif;?>
-              
+              <
+              ?php endif;?> -->
+
             </label>
             <input type="text" id="email" name="email" placeholder="Your email..."
             <?php if($missing||$errors){

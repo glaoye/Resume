@@ -30,35 +30,40 @@ function isEmail($value, $pattern, &$isValid){
 
 isSuspect($_POST, $pattern, $suspect);
 
-
 if(!$suspect){
-
-
   foreach ($_POST as $key => $value) {
-  /*check this later, you probs don't need this conditional*/
-    $value = is_array($value) ? $value : trim($value);
+    $value = is_array($value) ? $value : trim($value);   /*check this later, you probs don't need this conditional*/
     if (empty($value)&& in_array($key, $required)){
       $missing[] = $key;
       $$key = '';
 
-
-    }elseif($key=='email'){
-      $$key=$value;
-      $test=1;
-      $email_pattern = '^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$^';
-      isEmail($value, $email_pattern, $isValid);
-      if (!$isValid){
-        $errors[]='email';
-      }
+    // }elseif($key=='email'){
+    //   $$key=$value;
+    //   $test=1;
+    //   $email_pattern = '^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$^';
+    //   isEmail($value, $email_pattern, $isValid);
+    //   if (!$isValid){
+    //     $errors[]='email';
+    //   }
 
 
     }elseif(in_array($key, $expected)){//but when will key not be in expected
       $$key=$value;
-
-
     };
   };
+  //Validate users Email
 
+  if(!$missing && !empty($email)) :
+    $validemail = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    if($validemail){
+      $headers[] = "Reply-to: $validemail";
+    }else {$errors['email']=true;
+    }
+  endif;
+  //if no erros create headers and message body
+  if (!$errors && !$missing) :
+    $headers= implode("\r\n", $headers);
+  endif;
 };
 //if suspect is true, neither missing or errors will have values, script won't run.
 ?>

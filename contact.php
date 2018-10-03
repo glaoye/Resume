@@ -29,10 +29,17 @@ if (isset($_POST['send'])){
   </head>
 
   <body>
+    <section class = 'banner'>
+      <div class='content'>
+        <a href="index.html"><button>Resume</button></a>
+        <a href="values.html"><button>My Values</button></a>
+        <a href="bestwork.html"><button>Best Work</button></a>
+        <a href="contact.php"><button>Contact</button></a>
+      </div>
+    </section>
     <div class='content'>
     <header>
 
-          <button><a href="index.html">Resume</a></button>||<button><a href="values.html">My Values</a></button>||<button><a href="bestwork.html">Best Work</a></button>||<button><a href="contact.php">Contact</a></button>
           <h1>Contact Me!</h1>
 
     </header>

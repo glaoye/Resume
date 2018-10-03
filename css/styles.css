@@ -47,10 +47,10 @@ button{
 
 button:hover{
   background: #FFFABA;
-  box-shadow: 0px 0px 15px 0px lightblue;
+  cursor:pointer;
   /* opacity: 1; */
 }
-button a{
+button{
   color:  #968142;
   text-decoration: none;
   font-size: 20pt;
@@ -119,9 +119,14 @@ p:hover~.imgcontainer{
 
 
 
-.content:hover>h2{
+.education .content:hover>h2, .achievements .content:hover>h2, .interests .content:hover>h2{
   font-size: 47pt;
   text-shadow: 0px 0px 20px lightblue;
+
+}
+.work .content:hover>h2, .skills .content:hover>h2{
+  font-size: 47pt;
+  text-shadow: 0px 0px 20px #FFE1A3;
 
 }
 
@@ -226,7 +231,7 @@ h3{
   padding-right: 50px
 }
 
-.education{
+.education, .achievements, .interests{
   clear: both;
   background: #EDF9FF;
 }
@@ -237,15 +242,19 @@ h3{
 
 
 .date{
-  display: inline-block;
   padding:0px;
   margin-bottom:50px;
   font-style: italic;
   font-size: 15pt;
+  font-weight: 100;
+  color: grey;
   }
-
-.work{
-  background:#f7fff6;
+.break{
+  text-align:center;
+  font-weight: 100;
+}
+.work, .skills{
+  background:#FFFCF7;
 }
 
 

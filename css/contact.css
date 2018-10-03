@@ -1,4 +1,33 @@
+.banner{
+  background: #20211F;
+  color:  #C9B98F;
+  height: 60px;
+  padding:0;
+  margin:0;
+}
+.banner .content{
+  padding-top:10px;
+}
 
+button{
+  height: 40px;
+  width: 24%;
+  transition: 0.3s;
+  background:  rgba(76, 175, 80, 0);
+  border: none;
+}
+
+button:hover{
+  background: #FFFABA;
+    cursor:pointer;
+  /* opacity: 1; */
+}
+button{
+  color:  #968142;
+  text-decoration: none;
+  font-size: 20pt;
+  font-family: 'Questrial';
+}
 .content{
   max-width:950px;
   margin:0 auto;

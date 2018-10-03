@@ -1,30 +1,10 @@
-/* mint cream #f7fff6
-pastel green/grey #bececd
-pastel green #c3d8be
-green #85b5a3
-pthalo green #0C352A
-electric blue #78E3FD*/
 
-/* turquoise #3AF2C7
-pastel green/grey #bececd
-pastel green #c3d8be
-green #85b5a3
-pthalo green #0C352A
-electric blue #78E3FD*/
-
-/*dark blue #011638
-grey ##E2E2E2
-pastel orange #C9B98F
-background blue #EDF9FF
+/*------------------------banner settings--------------------------*/
 
 
-*/
-
-
-/*------- global heading --------*/
-
-
-/*----banner settings----*/
+.banner .content{
+  padding-top:10px;
+}
 
 .banner{
   background: #20211F;
@@ -33,9 +13,7 @@ background blue #EDF9FF
   padding:0;
   margin:0;
 }
-.banner .content{
-  padding-top:10px;
-}
+
 
 button{
   height: 40px;
@@ -43,53 +21,42 @@ button{
   transition: 0.3s;
   background:  rgba(76, 175, 80, 0);
   border: none;
-}
-
-button:hover{
-  background: #FFFABA;
-  cursor:pointer;
-  /* opacity: 1; */
-}
-button{
   color:  #968142;
   text-decoration: none;
   font-size: 20pt;
   font-family: 'Questrial';
 }
-/*---- container settings ----*/
+
+button:hover{
+  background: #FFFABA;
+  cursor:pointer;
+  /* opacity: 1; */}
+
+
+
+/*------------------------- header footer details -------------------------*/
 header, footer {
   background: #011638;
-  color: #F2F2F2;
-}
-footer {
-  text-align: center;
-}
-header{
-  padding-top:50px;}
+  color: #F2F2F2;}
+
+header{padding-top:50px;}
+
+
+footer {text-align: center;}
 
 
 h2{
   font-size: 45pt;
-  transition: 0.3s;
-}
+  transition: 0.3s;}
 
 
-/*---- hover settings ---*/
+/*------------------------ hover settings ---------------------------*/
 
-
+/***header***/
 .headingcontainer:hover>.heading, .headingcontainer:hover>.subheading{
   text-shadow: 0px 0px 30px #9FA9AD;
 }
-/* .heading:hover{
-  text-shadow: 0px 0px 20px white;
-}
-.heading:hover+h2{
-  text-shadow: 0px 0px 20px white;
-} */
 
-/* .subheading:hover{
-  text-shadow: 0px 0px 10px #9FA9AD;
-} */
 p:hover~.imgcontainer img{
 
   -moz-transform: scale(1.05);
@@ -102,7 +69,6 @@ p:hover~.imgcontainer{
   -webkit-transform: scale(1.01);
   transform: scale(1.01);
 }
-
 
 .imgcontainer:hover{
   /* box-shadow: 0px 0px 20px 0px white; */
@@ -117,7 +83,7 @@ p:hover~.imgcontainer{
   transform: scale(1.05);
 }
 
-
+/***main***/
 
 .education .content:hover>h2, .achievements .content:hover>h2, .interests .content:hover>h2{
   font-size: 47pt;
@@ -134,22 +100,14 @@ p:hover~.imgcontainer{
   text-shadow: 0px 0px 20px #9FA9AD;
   font-size: 45pt;
 }
-/*local headin*/
 
+/*----------------------------heading details-------------------------------*/
+/***containers***/
 .headingcontainer{
   margin-bottom:20px;
 }
 
 
-/* .profile-img{
-  object-fit: cover;
-  width: 30%;
-  height: 280px;
-  float: left;
-  margin-top:20px;
-  border-radius:8px;
-  transition:0.3s
-} */
 .imgcontainer {
     position: relative;
     width: 30%;
@@ -167,7 +125,7 @@ p:hover~.imgcontainer{
     transition:0.3s
 }
 
-
+/***text***/
 .heading{
     font-size: 100px;
     color: #E2E2E2;
@@ -197,6 +155,9 @@ p:hover~.imgcontainer{
   font-weight: 10;
   font-size: 18pt
 }
+
+
+/*------------------------------content wraps----------------------------*/
 .headercontent{
   max-width:950px;
   margin:0 auto;
@@ -209,13 +170,30 @@ p:hover~.imgcontainer{
   padding:30px;
 }
 
-/*--------body---------*/
+/*-------------------------------body details----------------------------------*/
+
+
+
+
+
+/***sections***/
 body {
   clear: both;
   font-family: 'Abel', sans-serif;
   margin: 0;
 }
+.bits{
+  padding:20px 30px;
+}
 
+.education, .achievements, .interests{
+  clear: both;
+  background: #EDF9FF;
+}
+.work, .skills{
+  background:#FFFCF7;
+}
+/***text***/
 h3{
   font-size:25pt;
   padding: 0px;
@@ -226,26 +204,15 @@ h3{
 }
 
 .job{
-  display:inline-block;
-  font-size: 20pt;
+  font-size: 13pt;
   padding-right: 50px
 }
-
-.education, .achievements, .interests{
-  clear: both;
-  background: #EDF9FF;
-}
-.bits{
-  padding:20px 30px;
-}
-
-
 
 .date{
   padding:0px;
   margin-bottom:50px;
   font-style: italic;
-  font-size: 15pt;
+  font-size: 12pt;
   font-weight: 100;
   color: grey;
   }
@@ -253,22 +220,17 @@ h3{
   text-align:center;
   font-weight: 100;
 }
-.work, .skills{
-  background:#FFFCF7;
-}
 
 
 
 
 
+/*---------footer details----------*/
 
-a {
-  color: #78E3FD
-}
 
-a:hover {
-  text-decoration: none
-}
+footer a {color: #78E3FD}
+
+footer a:hover {text-decoration: none}
 
 
 

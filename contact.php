@@ -1,3 +1,5 @@
+<!--************************** PHP: set arrays **********************************-->
+
 <?php
 $errors = [];
 $missing = [];
@@ -29,6 +31,7 @@ if (isset($_POST['send'])){
   </head>
 
   <body>
+    <!--************************** banner **********************************-->
     <section class = 'banner'>
       <div class='content'>
         <a href="index.html"><button>Resume</button></a>
@@ -38,20 +41,22 @@ if (isset($_POST['send'])){
       </div>
     </section>
     <div class='content'>
+
+      <!--************************** header **********************************-->
     <header>
 
           <h1>Contact Me!</h1>
 
     </header>
 
-
+<!--************************** form **********************************-->
     <section class='contactform'>
 
         <div class="container">
 
           <form method='post' action="<?= $_SERVER['PHP_SELF'];?>">
-    <!-- action will not be executed here, but ina conditional statement on top of html
-    the current action sends page to itself-->
+    <!--remember: action is not executed here, but in the conditional statement on top of html.
+    This current action sends page to itself-->
               <?php if($missing):?>
                 <p class='warningheading'>Please fill in the required field(s).</p>
               <?php endif; ?>
@@ -62,7 +67,7 @@ if (isset($_POST['send'])){
                 <p class='warningheading'>Sorry, your message was unable to be sent.</p>
               <?php endif; ?>
 
-
+              <!--**firstname**-->
             <label for="fname">First Name
               <?php if($missing && in_array('firstname', $missing)):?>
                 <p class='warning'>Please enter your first name.</p>
@@ -71,6 +76,9 @@ if (isset($_POST['send'])){
             <input type="text" id="fname" name="firstname" placeholder="Your first name.."
             <?php if($missing||$errors){
               echo "value={$firstname}";}?>>
+
+
+              <!--**lastname**-->
 
             <label for="lname">Last Name
               <?php if($missing && in_array('lastname', $missing)):?>
@@ -81,30 +89,32 @@ if (isset($_POST['send'])){
             <?php if($missing||$errors){
               echo "value={$lastname}";}?>>
 
+
+              <!--**email**-->
+
+
             <label for="email">Email
               <?php if($missing && in_array('email', $missing)):?>
                 <p class='warning'>Please enter your email address.</p>
               <?php elseif (isset($errors['email'])):?>
                 <p class='warning'>Invalid email address</p>
               <?php endif; ?>
-
-              <!-- ?php if($errors && in_array('email', $errors)):?>
-                <p class='warning'>Please enter a valid email address.</p>
-              <
-              ?php endif;?> -->
-
             </label>
             <input type="text" id="email" name="email" placeholder="Your email..."
             <?php if($missing||$errors){
               echo "value={$email}";}?>>
 
 
-
+              <!--**company**-->
 
             <label for="company">Company</label>
             <input type="text" id="company" name="company" placeholder="Your company... (optional)"
             <?php if($missing||$errors){
               echo "value={$company}";}?>>
+
+
+              <!--**category**-->
+
 
             <label for="category">Category
               <?php if($missing && in_array('category', $missing)):?>
@@ -119,6 +129,9 @@ if (isset($_POST['send'])){
                 <option value="suggestion">Suggestion</option>
                 <option value="other">Other</option>
               </select>
+
+              <!--**messagedetails**-->
+
 
             <label for="subject">Message Details
               <?php if($missing && in_array('message_details', $missing)):?>
@@ -136,6 +149,8 @@ if (isset($_POST['send'])){
   </section>
 </div>
 <pre>
+
+                <!--*************MailSent testing*************-->
 <?php
 if ($_POST && $mailSent){
   echo "Message: \n\n";

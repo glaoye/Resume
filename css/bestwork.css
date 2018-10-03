@@ -226,7 +226,7 @@ img:hover{
 
 .circle.imgcontainer .imgtext{
   font-weight: bold;
-  color: #C6BB61;
+  color: blue;
 }
 .circle.imgcontainer, .circleimg{
   border-radius: 50%}

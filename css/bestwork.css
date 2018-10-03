@@ -77,7 +77,7 @@ h3{
   text-align: center;
   font-weight: 200;
 }
-.reports{
+.reports, .computing, .other{
   background:#DCEAE5;
 }
 
@@ -226,7 +226,7 @@ img:hover{
 
 .circle.imgcontainer .imgtext{
   font-weight: bold;
-  color: #C6BB61;
+  color:blue;
 }
 .circle.imgcontainer, .circleimg{
   border-radius: 50%}
